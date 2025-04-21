@@ -29,7 +29,10 @@ st.markdown("""
 def load_data():
     calories = pd.read_csv("calories.csv")
     exercise = pd.read_csv("exercise.csv")
-    return pd.concat([exercise, calories['Calories']], axis=1)
+    merged = pd.concat([exercise, calories['Calories']], axis=1)
+    if 'User_ID' in merged.columns:
+        merged.drop('User_ID', axis=1, inplace=True)
+    return merged
 
 # Load data
 calories_data = load_data()
@@ -71,6 +74,7 @@ with st.form("user_input_form"):
             'Body_Temp': [body_temp]
         })
 
+        input_df = input_df[X.columns]  # Ensure same order as training data
         pred = model.predict(input_df)
         st.success(f"🔥 Estimated Calories Burned: {pred[0]:.2f} kcal")
 
