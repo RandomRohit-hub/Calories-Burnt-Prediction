@@ -116,4 +116,3 @@ st.write(f"📉 Mean Absolute Error: {mae:.2f}")
 
 
 
-
