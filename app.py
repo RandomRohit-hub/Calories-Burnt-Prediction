@@ -112,3 +112,8 @@ mae = metrics.mean_absolute_error(Y_test, prediction)
 st.subheader("📈 Model Performance")
 st.write(f"✅ R² Score: {r2:.2f}")
 st.write(f"📉 Mean Absolute Error: {mae:.2f}")
+
+
+
+
+
