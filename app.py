@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
 from sklearn import metrics
 
-# Title
+
 st.title("🔥 Calorie Burn Prediction App")
 
 st.markdown("""
